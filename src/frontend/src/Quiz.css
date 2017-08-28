@@ -1,0 +1,21 @@
+.quiz {
+    width:  960px;
+    margin: 20px auto 0;
+}
+
+.quiz h2 {
+    font-style: italic;
+}
+
+.quiz label {
+    display: block;
+}
+
+.quiz input[type="radio"] {
+    margin-right: 10px;
+    line-height:1.5;
+}
+
+.quiz .main-content {
+    margin-top: 20px;
+}
