@@ -88,7 +88,3 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
-setTimeout(() => {
-  "npm ./bin/start-frontend";
-}, 2000);
