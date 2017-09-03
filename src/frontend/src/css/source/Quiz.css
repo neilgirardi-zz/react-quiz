@@ -19,3 +19,16 @@
 .quiz .main-content {
     margin-top: 20px;
 }
+
+.quiz .wrong-answer {
+    text-decoration: line-through;
+    color: red;
+}
+
+.quiz .correct-answer {
+    color: green
+}
+
+.quiz .review-answer {
+    text-indent: 20px;
+}

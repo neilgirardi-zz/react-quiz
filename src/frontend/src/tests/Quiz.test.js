@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Quiz';
+import App from './../components/Quiz';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
