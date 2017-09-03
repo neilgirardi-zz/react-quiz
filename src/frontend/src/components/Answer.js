@@ -15,16 +15,18 @@ class Answer extends Component {
 
     render() {
         return (
-            <label htmlFor="_{this.props.qID}">
+            <label
+                htmlFor={'answer-' + this.props.aID.toLowerCase()}
+                className={this.props.className}>
                 <input
-                    id="_{this.props.qID}"
+                    id={'answer-' + this.props.aID.toLowerCase()}
                     type="radio"
-                    value={this.props.qID}
-                    name="choices"
+                    value={this.props.aID}
+                    name={this.props.name}
                     onChange={this._handleChange}
                     checked={this.props.checked}>
                 </input>
-                {this.props.qID}. {this.props.text}
+                {this.props.letter}. {this.props.text}
             </label>
         )
     }
@@ -35,7 +37,8 @@ Answer.propTypes = {
    qID: PropTypes.string,
     onChange: PropTypes.func,
     checked: PropTypes.bool,
-    text: PropTypes.string
+    text: PropTypes.string,
+    className: PropTypes.string
 };
 
 export default Answer;

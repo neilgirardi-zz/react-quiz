@@ -1,59 +1,57 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Question from './Question';
+import Answer from './Answer';
 import './../css/source/Quiz.css';
 
 class Results extends Component {
 
-    getData() {
+    parseResults() {
         const results = this.props.results;
-        const questions = this.props.questions;
-        const arr = [];
 
-        results.map( result => {
-                let wrongAnswerStr = null;
-                let correctAnswerStr;
-
-                const question = questions
-                    .filter( question => question.ID === result.id )
-                    .pop();
-
-                correctAnswerStr = question.multipleChoices
-                    .filter( mc => mc.ID === question.correctAnswer)
-                    .pop()
-                    .answer;
-
-                if (question.correctAnswer !== result.answer) {
-                    wrongAnswerStr = question.multipleChoices
-                        .filter( mc => mc.ID === result.answer)
-                        .pop()
-                        .answer
-                }
-
-                arr.push({
-                    id: question.ID,
-                    question: question.question,
-                    correctAnswer: correctAnswerStr,
-                    wrongAnswer: wrongAnswerStr
-                });
-
-            }
-        );
-        return arr;
+        return results.map( r => ({
+            question: r.question,
+            correctAnswer: r.correctAnswer,
+            wrongAnswer: ( r.selectedAnswer.ID === r.correctAnswer.ID) ?
+                null : r.selectedAnswer
+            })
+        )
     }
 
     getResultsHTML() {
-        const data = this.getData();
-        return data.map( (d => {
+        const data = this.parseResults();
+        return data.map( (d, index) => {
                 return (
-                    <div key={d.id}>
-                        <p>{d.id + 1}. {d.question}</p>
-                        { d.wrongAnswer &&
-                            <p className="wrong-answer review-answer">{d.wrongAnswer}</p>
+                    <div className="results" key={d.question.ID}>
+                        <Question
+                            number={d.question.ID + 1}
+                            text={d.question.question}
+                        />
+                        { d.wrongAnswer !== null &&
+                            <Answer key={index + '-' + d.wrongAnswer.ID}
+                                aID={index + '-' + d.wrongAnswer.ID}
+                                letter={d.wrongAnswer.ID}
+                                className="wrong-answer"
+                                value={d.wrongAnswer.value}
+                                name={index + '-choices'}
+                                onSelectAnswer={function() {}}
+                                checked={true}
+                                text={d.wrongAnswer.answer}
+                            />
                         }
-                        <p className="correct-answer review-answer">{d.correctAnswer}</p>
+                        <Answer key={index + '-' + d.correctAnswer.ID}
+                                aID={index + '-' + d.correctAnswer.ID}
+                                letter={d.correctAnswer.ID}
+                                className="correct-answer"
+                                value={d.correctAnswer.value}
+                                name={index + '-choices'}
+                                onSelectAnswer={function() {}}
+                                checked={d.wrongAnswer === null}
+                                text={d.correctAnswer.answer}
+                            />
                     </div>
                 )
-        }) )
+        })
     }
 
     render(){

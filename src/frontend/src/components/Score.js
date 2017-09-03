@@ -10,9 +10,8 @@ class Score extends Component {
         const percent = this.props.percent;
 
         return (
-            <div>
-                <p>You got {correctAnswers} out of {numQuestions} correct</p>
-                <p>Score: {percent}%</p>
+            <div className="score">
+                <p>Score: {percent}% <span>( {correctAnswers} out of {numQuestions} )</span></p>
             </div>
         )
     }

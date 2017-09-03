@@ -6,7 +6,7 @@ class Question extends Component {
 
     render() {
         return (
-            <p>{this.props.number}. {this.props.text}</p>
+            <p className="question">{this.props.number}. {this.props.text}</p>
         )
     }
 

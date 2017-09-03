@@ -13,7 +13,6 @@ class Quiz extends Component {
         super(props);
 
         this.state = {
-            hasData: false,
             questions: [],
             step: 0,
             selectedAnswer: '',
@@ -66,8 +65,7 @@ class Quiz extends Component {
             .then( (response) => {
                 const data = response.data;
                 this.setState({
-                    questions: data,
-                    hasData: true
+                    questions: data
                 });
             })
             .catch( (error) => {
@@ -81,12 +79,14 @@ class Quiz extends Component {
             this.state.questions[this.state.step].multipleChoices
                 .map( (mc, index) =>
                     <Answer key={mc.ID}
-                       qID={mc.ID}
-                        value={mc.ID}
-                        name="choices"
-                        onSelectAnswer={this._radioButtonEventHandler}
-                        checked={this.value === this.state.selectedAnswer}
-                        text={mc.answer}
+                            aID={mc.ID}
+                            letter={mc.ID}
+                            className=""
+                            value={mc.ID}
+                            name="choices"
+                            onSelectAnswer={this._radioButtonEventHandler}
+                            checked={this.value === this.state.selectedAnswer}
+                            text={mc.answer}
                     />
             )
         )
@@ -94,18 +94,28 @@ class Quiz extends Component {
 
 
     _radioButtonEventHandler(val) {
+        const questionObj = this.state.questions[this.state.step];
+        const correctAnswerValue = questionObj.correctAnswer;
+        const isCorrectAnswer = (val === correctAnswerValue);
+
+        const correctAnswer = questionObj.multipleChoices
+            .filter( mc => mc.ID === correctAnswerValue )
+            .pop();
+
+        const selectedAnswer =  questionObj.multipleChoices
+            .filter( mc => mc.ID === val )
+            .pop();
+
         this.setState({
             selectedAnswer: val,
             results: this.state.results.concat(
                 {
-                    id: this.state.step,
-                    answer: val
+                    question: questionObj,
+                    selectedAnswer: selectedAnswer,
+                    correctAnswer: correctAnswer
                 }
             )
         });
-
-        const correctAnswer = this.state.questions[this.state.step].correctAnswer;
-        const isCorrectAnswer = (val === correctAnswer);
 
         this.setState({
             step: this.state.step + 1,
@@ -129,7 +139,7 @@ class Quiz extends Component {
                 <div className="quiz">
                     <Header
                         heading="Hacker History"
-                        subHeading="how many can you answer?"
+                        subHeading="Covfefe break? Let's play trivia!"
                     />
                     {this._content()}
                 </div>
