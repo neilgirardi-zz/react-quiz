@@ -14,7 +14,7 @@ class Question extends Component {
 
 Question.propTypes = {
     number: PropTypes.number,
-    text: PropTypes.text
+    text: PropTypes.string
 };
 
 export default Question;

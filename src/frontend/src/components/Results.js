@@ -4,10 +4,6 @@ import './../css/source/Quiz.css';
 
 class Results extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     getData() {
         const results = this.props.results;
         const questions = this.props.questions;
@@ -71,7 +67,7 @@ class Results extends Component {
 }
 
 Results.propTypes = {
-   results: PropTypes.object,
+   results: PropTypes.array,
     questions: PropTypes.array
 };
 

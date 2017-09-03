@@ -15,7 +15,7 @@ class Answer extends Component {
 
     render() {
         return (
-            <label for="_{this.props.qID}">
+            <label htmlFor="_{this.props.qID}">
                 <input
                     id="_{this.props.qID}"
                     type="radio"
@@ -32,7 +32,7 @@ class Answer extends Component {
 }
 
 Answer.propTypes = {
-   qID: PropTypes.number,
+   qID: PropTypes.string,
     onChange: PropTypes.func,
     checked: PropTypes.bool,
     text: PropTypes.string
