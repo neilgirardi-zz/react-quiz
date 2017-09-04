@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Question from './Question';
 import Answer from './Answer';
+import FunFact from './FunFact';
 import './../css/source/Quiz.css';
 
 class Results extends Component {
@@ -11,6 +12,7 @@ class Results extends Component {
 
         return results.map( r => ({
             question: r.question,
+            funFact: (typeof r.question.funFact !== 'undefined') ? r.question.funFact : null,
             correctAnswer: r.correctAnswer,
             wrongAnswer: ( r.selectedAnswer.ID === r.correctAnswer.ID) ?
                 null : r.selectedAnswer
@@ -49,6 +51,9 @@ class Results extends Component {
                                 checked={d.wrongAnswer === null}
                                 text={d.correctAnswer.answer}
                             />
+                        {d.funFact !== null &&
+                            <FunFact text={d.funFact} />
+                        }
                     </div>
                 )
         })
@@ -65,8 +70,7 @@ class Results extends Component {
 }
 
 Results.propTypes = {
-   results: PropTypes.array,
-    questions: PropTypes.array
+   results: PropTypes.array
 };
 
 export default Results;

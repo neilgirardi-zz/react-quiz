@@ -91,7 +91,9 @@ module.exports = exports = [
         "answer": "Bob Biniak"
       }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    funFact: "The prototype of the computer mouse was made from a " +
+    "wooden block  with two wheels."
   },
   {
     "ID": 4,
@@ -115,7 +117,9 @@ module.exports = exports = [
         "answer": "'login'"
       }
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    funFact: "The intended message was 'login', but the computer crashed before the " +
+    "operator finished typing it."
   },
   {
     "ID": 5,
@@ -139,7 +143,9 @@ module.exports = exports = [
         "answer": "The mathematical constant Pi"
       }
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    funFact: "Contributors to Python's documentation are encouraged by its " +
+    "creator to include references to the show."
   },
   {
     "ID": 6,
@@ -238,7 +244,9 @@ module.exports = exports = [
         "stewardship of  Microsoft as CEO"
       }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    funFact: "It's based on a principle in learning psychology --the Yerkes-Dodson " +
+    "law-- and a joke about Steve Balmer."
   }
 
 
