@@ -1,17 +1,51 @@
+body {
+    background-color: #f9f9fb;
+    color: #545454;
+}
 .quiz {
-    width:  960px;
-    margin: 20px auto 0;
+    font-family: "Open Sans", arial, sans-serif;
 }
 
-.quiz h2 {
-    font-style: italic;
+.quiz-header {
+    background-color: #494d55;
+    border-top: 5px solid #40babd;
+    padding: 60px 0;
+}
+
+.quiz-header .logo {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.quiz .text-highlight {
+    color: #40babd;
+    font-weight: 500;
+}
+
+.quiz-header .tagline {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.quiz ul.answers {
+    display: table;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+.quiz .results ul.answers {
+    display: block;
 }
 
 .quiz label {
     display: block;
-    float: left;
-    clear: left;
     font-size: 20px;
+}
+
+.quiz .answers li:hover {
+    color: #EA5395;
+    cursor: pointer;
 }
 
 .quiz input[type="radio"] {
@@ -20,16 +54,13 @@
 }
 
 .quiz .main-content {
-    margin-top: 30px;
+    display: table;
+    margin: 30px auto 0;
+   text-align: center;
 }
 
 .quiz .wrong-answer {
     text-decoration: line-through;
-    color: red;
-}
-
-.quiz .correct-answer {
-    color: green
 }
 
 .quiz .review-answer {
@@ -38,14 +69,19 @@
 
 .quiz .question {
     font-size: 20px;
+    text-align: center;
+}
+
+.quiz .results .question {
+    text-align: left;
 }
 
 .quiz .results {
-    overflow: auto;
     margin-bottom: 20px;
 }
 
 .quiz .score {
+    display: table;
     font-weight: bold;
 }
 
@@ -54,7 +90,8 @@
 }
 
 .quiz .fun-fact {
-    clear: left;
+    display: table;
+    text-align: left;
     font-size: 20px;
     margin: 20px 0 20px 24px;
 }
@@ -63,4 +100,11 @@
     font-weight: bold;
     font-style: italic;
     display: block;
+}
+
+.quiz .correct-answer::after {
+    content: "\2713";
+    color: #40babd;
+    fonst-size: 40px;
+    font-weight: 800;
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './../css/source/Quiz.css'
 import PropTypes from 'prop-types';
 
 class Question extends Component {

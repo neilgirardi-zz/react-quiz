@@ -1,6 +1,57 @@
 module.exports = exports = [
+    {
+        "ID": 0,
+        "question": "in 1969, the first electronic message was sent " +
+        "between two remote computers. The message said ...?",
+        "multipleChoices": [
+            {
+                "ID": "A",
+                "answer": "'hello world'"
+            },
+            {
+                "ID": "B",
+                "answer": "'test'"
+            },
+            {
+                "ID": "C",
+                "answer":  "'lo'"
+            },
+            {
+                "ID": "D",
+                "answer": "'hello'"
+            }
+        ],
+        "correctAnswer": "C",
+        funFact: "The intended message was 'login', but the computer crashed before the " +
+        "operator finished typing it."
+    },
+    {
+        "ID": 1,
+        "question": "Who invented the mouse?",
+        "multipleChoices": [
+            {
+                "ID": "A",
+                "answer": "Steve Wozniak"
+            },
+            {
+                "ID": "B",
+                "answer": "Douglas Englebart"
+            },
+            {
+                "ID": "C",
+                "answer":  "Ed Roberts"
+            },
+            {
+                "ID": "D",
+                "answer": "Bob Biniak"
+            }
+        ],
+        "correctAnswer": "B",
+        funFact: "The prototype of the computer mouse was made from a " +
+        "wooden block  with two wheels."
+    },
   {
-    "ID": 0,
+    "ID": 2,
     "question": "Who created the Linux operating system?",
     "multipleChoices": [
       {
@@ -24,7 +75,7 @@ module.exports = exports = [
   },
 
   {
-    "ID": 1,
+    "ID": 3,
     "question": "Who created the JavaScript Programming language?",
     "multipleChoices": [
       {
@@ -48,7 +99,7 @@ module.exports = exports = [
   },
 
   {
-    "ID": 2,
+    "ID": 4,
     "question": "What was the Java programming language's original name?",
     "multipleChoices": [
       {
@@ -69,57 +120,6 @@ module.exports = exports = [
       }
     ],
     "correctAnswer": "A"
-  },
-  {
-    "ID": 3,
-    "question": "Who invented the mouse?",
-    "multipleChoices": [
-      {
-        "ID": "A",
-        "answer": "Steve Wozniak"
-      },
-      {
-        "ID": "B",
-        "answer": "Douglas Englebart"
-      },
-      {
-        "ID": "C",
-        "answer":  "Ed Roberts"
-      },
-      {
-        "ID": "D",
-        "answer": "Bob Biniak"
-      }
-    ],
-    "correctAnswer": "B",
-    funFact: "The prototype of the computer mouse was made from a " +
-    "wooden block  with two wheels."
-  },
-  {
-    "ID": 4,
-    "question": "in 1969, the first electronic message was sent " +
-    "between two remote computers. The message said ...?",
-    "multipleChoices": [
-      {
-        "ID": "A",
-        "answer": "'hello world'"
-      },
-      {
-        "ID": "B",
-        "answer": "'test'"
-      },
-      {
-        "ID": "C",
-        "answer":  "'lo'"
-      },
-      {
-        "ID": "D",
-        "answer": "'login'"
-      }
-    ],
-    "correctAnswer": "C",
-    funFact: "The intended message was 'login', but the computer crashed before the " +
-    "operator finished typing it."
   },
   {
     "ID": 5,
@@ -158,7 +158,7 @@ module.exports = exports = [
       },
       {
         "ID": "B",
-        "answer": "It was originally intended to be used as a templating language " +
+        "answer": "It was originally intended to be templating language " +
         "for websites written in C / C++"
       },
       {
@@ -222,7 +222,8 @@ module.exports = exports = [
   },
   {
     "ID": 9,
-    "question": "The Balmer Peak is ...?",
+    "question": "Which of the following statements gives an accurate description " +
+    "of what the  Balmer Peak is?",
     "multipleChoices": [
       {
         "ID": "A",
@@ -240,7 +241,7 @@ module.exports = exports = [
       },
       {
         "ID": "D",
-        "answer": "A term coined by tech journalists to describe Steve Balmer's " +
+        "answer": "A term coined by the press to describe Steve Balmer's " +
         "stewardship of  Microsoft as CEO"
       }
     ],

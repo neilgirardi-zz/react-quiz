@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './../css/source/Quiz.css';
+import './../css/vendor/google-fonts.css';
 import Header from './Header';
 import Question  from './Question';
 import Answer from './Answer';
@@ -35,7 +36,7 @@ class Quiz extends Component {
                 <div className="main-content">
                     <Question
                         number={this.state.step + 1}
-                        text= {this.state.questions[this.state.step].question}
+                        text={this.state.questions[this.state.step].question}
                         />
                     {this._multipleChoices()}
                 </div>
@@ -47,11 +48,11 @@ class Quiz extends Component {
                         correctAnswers={this.state.correctAnswers}
                         numQuestions={this.state.questions.length}
                         percent={Math.floor(this.state.correctAnswers / this.state.questions.length * 100) }
-                    />
+                        />
                     <Results
                         results={this.state.results}
                         questions={this.state.questions}
-                    />
+                        />
                 </div>
             )
         }
@@ -62,13 +63,13 @@ class Quiz extends Component {
         const url = '/questions';
 
         axios.get(url)
-            .then( (response) => {
+            .then((response) => {
                 const data = response.data;
                 this.setState({
                     questions: data
                 });
             })
-            .catch( (error) => {
+            .catch((error) => {
                 console.log(error)
             });
     }
@@ -76,19 +77,24 @@ class Quiz extends Component {
 
     _multipleChoices() {
         return (
-            this.state.questions[this.state.step].multipleChoices
-                .map( (mc, index) =>
-                    <Answer key={mc.ID}
-                            aID={mc.ID}
-                            letter={mc.ID}
-                            className=""
-                            value={mc.ID}
-                            name="choices"
-                            onSelectAnswer={this._radioButtonEventHandler}
-                            checked={this.value === this.state.selectedAnswer}
-                            text={mc.answer}
-                    />
-            )
+            <ul className="answers">
+                {this.state.questions[this.state.step].multipleChoices
+                    .map((mc, index) =>
+                        <li>
+                            <Answer key={mc.ID}
+                                id={mc.ID}
+                                letter={mc.ID}
+                                className=""
+                                value={mc.ID}
+                                name="choices"
+                                onSelectAnswer={this._radioButtonEventHandler}
+                                checked={this.value === this.state.selectedAnswer}
+                                text={mc.answer}
+                            />
+                        </li>)
+                }
+            </ul>
+
         )
     }
 
@@ -99,11 +105,11 @@ class Quiz extends Component {
         const isCorrectAnswer = (val === correctAnswerValue);
 
         const correctAnswer = questionObj.multipleChoices
-            .filter( mc => mc.ID === correctAnswerValue )
+            .filter(mc => mc.ID === correctAnswerValue)
             .pop();
 
-        const selectedAnswer =  questionObj.multipleChoices
-            .filter( mc => mc.ID === val )
+        const selectedAnswer = questionObj.multipleChoices
+            .filter(mc => mc.ID === val)
             .pop();
 
         this.setState({
@@ -135,15 +141,15 @@ class Quiz extends Component {
 
 
     render() {
-            return (
-                <div className="quiz">
-                    <Header
-                        heading="Hacker History"
-                        subHeading="Covfefe break? Let's play trivia!"
-                    />
-                    {this._content()}
-                </div>
-            );
+        return (
+            <div className="quiz">
+                <Header
+                    heading="Hacker History"
+                    subHeading="Covfefe break? Let's play trivia!"
+                />
+                {this._content()}
+            </div>
+        );
     }
 
 

@@ -1,7 +1,11 @@
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
-import './../css/source/Quiz.css';
 
+/**
+ * Answer.js
+ *
+ * controlled component multiple choice answers
+ */
 class Answer extends Component {
 
     constructor(props) {
@@ -10,18 +14,18 @@ class Answer extends Component {
     }
 
     _handleChange(e) {
-        this.props.onSelectAnswer( e.target.value )
+        this.props.onSelectAnswer(e.target.value)
     }
 
     render() {
         return (
             <label
-                htmlFor={'answer-' + this.props.aID.toLowerCase()}
+                htmlFor={'answer-' + this.props.id.toLowerCase()}
                 className={this.props.className}>
                 <input
-                    id={'answer-' + this.props.aID.toLowerCase()}
+                    id={'answer-' + this.props.id.toLowerCase()}
                     type="radio"
-                    value={this.props.aID}
+                    value={this.props.id}
                     name={this.props.name}
                     onChange={this._handleChange}
                     checked={this.props.checked}>
@@ -34,7 +38,7 @@ class Answer extends Component {
 }
 
 Answer.propTypes = {
-   qID: PropTypes.string,
+    qID: PropTypes.string,
     onChange: PropTypes.func,
     checked: PropTypes.bool,
     text: PropTypes.string,
