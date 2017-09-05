@@ -44,7 +44,7 @@ body {
 }
 
 .quiz .answers li:hover {
-    color: #EA5395;
+    color: #40babd;
     cursor: pointer;
 }
 
@@ -61,6 +61,7 @@ body {
 
 .quiz .wrong-answer {
     text-decoration: line-through;
+    text-decoration-color: #EA5395;
 }
 
 .quiz .review-answer {
@@ -74,15 +75,18 @@ body {
 
 .quiz .results .question {
     text-align: left;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 4px;
 }
 
 .quiz .results {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .quiz .score {
     display: table;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .quiz .score span {
@@ -93,11 +97,10 @@ body {
     display: table;
     text-align: left;
     font-size: 20px;
-    margin: 20px 0 20px 24px;
+    margin: 20px 0 20px 0;
 }
 
 .quiz .fun-fact span {
-    font-weight: bold;
     font-style: italic;
     display: block;
 }
@@ -105,6 +108,6 @@ body {
 .quiz .correct-answer::after {
     content: "\2713";
     color: #40babd;
-    fonst-size: 40px;
     font-weight: 800;
+    margin-left: 10px;
 }

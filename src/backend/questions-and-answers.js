@@ -158,8 +158,8 @@ module.exports = exports = [
       },
       {
         "ID": "B",
-        "answer": "It was originally intended to be templating language " +
-        "for websites written in C / C++"
+        "answer": "It was originally intended to be used as a templating language " +
+        "for C / C++"
       },
       {
         "ID": "C",
@@ -170,7 +170,8 @@ module.exports = exports = [
         "answer": "The acronym PHP originally stood for Personal Home Page"
       }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "funFact": "PHP's creator, Rasmus Lerdorf, is Danish-Canadian."
   },
   {
     "ID": 7,
