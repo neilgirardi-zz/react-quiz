@@ -80,7 +80,7 @@ class Quiz extends Component {
             <ul className="answers">
                 {this.state.questions[this.state.step].multipleChoices
                     .map((mc, index) =>
-                        <li>
+                        <li key={index}>
                             <Answer key={mc.ID}
                                 id={mc.ID}
                                 letter={mc.ID}
