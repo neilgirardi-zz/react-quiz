@@ -54,9 +54,7 @@ body {
 }
 
 .quiz .main-content {
-    display: table;
     margin: 30px auto 0;
-   text-align: center;
 }
 
 .quiz .wrong-answer {
@@ -70,11 +68,9 @@ body {
 
 .quiz .question {
     font-size: 20px;
-    text-align: center;
 }
 
 .quiz .results .question {
-    text-align: left;
     border-bottom: 1px solid #cccccc;
     padding-bottom: 4px;
 }
@@ -84,7 +80,6 @@ body {
 }
 
 .quiz .score {
-    display: table;
     font-weight: bold;
     font-size: 20px;
 }
@@ -94,8 +89,6 @@ body {
 }
 
 .quiz .fun-fact {
-    display: table;
-    text-align: left;
     font-size: 20px;
     margin: 20px 0 20px 0;
 }

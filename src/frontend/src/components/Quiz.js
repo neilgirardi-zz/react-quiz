@@ -33,7 +33,7 @@ class Quiz extends Component {
     _content() {
         if (this.state.step < this.state.questions.length) {
             return (
-                <div className="main-content">
+                <div className="main-content container">
                     <Question
                         number={this.state.step + 1}
                         text={this.state.questions[this.state.step].question}
@@ -43,7 +43,7 @@ class Quiz extends Component {
             )
         } else {
             return (
-                <div className="main-content">
+                <div className="main-content container">
                     <Score
                         correctAnswers={this.state.correctAnswers}
                         numQuestions={this.state.questions.length}
