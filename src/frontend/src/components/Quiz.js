@@ -3,7 +3,7 @@ import './../css/source/Quiz.css';
 import './../css/vendor/google-fonts.css';
 import Header from './Header';
 import Question  from './Question';
-import Answer from './Answer';
+import MultipleChoice from './MultipleChoice'
 import Score from './Score';
 import Results from './Results';
 const axios = require('axios');
@@ -32,13 +32,19 @@ class Quiz extends Component {
 
     _content() {
         if (this.state.step < this.state.questions.length) {
+            const question = this.state.questions[this.state.step];
+            const number = this.state.step + 1;
             return (
                 <div className="main-content container">
                     <Question
-                        number={this.state.step + 1}
-                        text={this.state.questions[this.state.step].question}
+                        number={number}
+                        text={question.question}
                         />
-                    {this._multipleChoices()}
+                    <MultipleChoice
+                        eventHandler={this._radioButtonEventHandler}
+                        choices= {question.multipleChoices}
+                        selectedAnswer={this.state.selectedAnswer}
+                    />
                 </div>
             )
         } else {
@@ -72,30 +78,6 @@ class Quiz extends Component {
             .catch((error) => {
                 console.log(error)
             });
-    }
-
-
-    _multipleChoices() {
-        return (
-            <ul className="answers">
-                {this.state.questions[this.state.step].multipleChoices
-                    .map((mc, index) =>
-                        <li key={index}>
-                            <Answer key={mc.ID}
-                                id={mc.ID}
-                                letter={mc.ID}
-                                className=""
-                                value={mc.ID}
-                                name="choices"
-                                onSelectAnswer={this._radioButtonEventHandler}
-                                checked={this.value === this.state.selectedAnswer}
-                                text={mc.answer}
-                            />
-                        </li>)
-                }
-            </ul>
-
-        )
     }
 
 
@@ -144,8 +126,8 @@ class Quiz extends Component {
         return (
             <div className="quiz">
                 <Header
-                    heading="Hacker History"
-                    subHeading="Covfefe break? Let's play trivia!"
+                    mainHeading="Hacker History"
+                    tagline="A quiz for your coffee break"
                 />
                 {this._content()}
             </div>
