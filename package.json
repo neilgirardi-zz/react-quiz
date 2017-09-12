@@ -1,13 +1,14 @@
 {
-  "name": "quartz-quiz",
-  "version": "0.0.0",
+  "name": "hacker-history",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start-server": "node ./bin/www",
     "start-client": "node ./bin/start-frontend",
     "build-client": "node ./bin/build-frontend",
     "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
-    "build": "npm run build-client"
+    "build": "npm run build-client",
+    "setup": "node ./bin/setup"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
