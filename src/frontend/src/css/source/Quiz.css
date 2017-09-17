@@ -25,6 +25,7 @@ body {
 
 .quiz-header .tagline {
     color: rgba(255, 255, 255, 0.85);
+    font-size: 20px;
 }
 
 .quiz ul.answers {
@@ -103,4 +104,8 @@ body {
     color: #40babd;
     font-weight: 800;
     margin-left: 10px;
+}
+
+.quiz .emphasis {
+    font-style: italic;
 }

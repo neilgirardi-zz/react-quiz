@@ -5,10 +5,10 @@ class FunFact extends Component {
 
     render() {
         return (
-            <p className="fun-fact">
-                <span>Fun fact:</span>
-                {this.props.text}
-            </p>
+            <div className="fun-fact">
+                <p className="emphasis">Fun fact:</p>
+                <p>{this.props.text}</p>
+            </div>
         )
     }
 

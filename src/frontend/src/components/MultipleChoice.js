@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Answer from './Answer';
+import PropTypes from 'prop-types';
 
 class MultipleChoice extends Component {
 
@@ -37,5 +38,11 @@ class MultipleChoice extends Component {
     }
 
 }
+
+MultipleChoice.propTypes = {
+    choices: PropTypes.array
+};
+
+
 
 export default MultipleChoice;
