@@ -17,8 +17,7 @@ class Quiz extends Component {
             questions: [],
             step: 0,
             selectedAnswer: '',
-            correctAnswers: 0,
-            incorrectAnswers: 0,
+            numCorrectAnswers: 0,
             results: []
         };
         this._radioButtonEventHandler = this._radioButtonEventHandler.bind(this);
@@ -51,9 +50,9 @@ class Quiz extends Component {
             return (
                 <div className="main-content container">
                     <Score
-                        correctAnswers={this.state.correctAnswers}
+                        numCorrectAnswers={this.state.numCorrectAnswers}
                         numQuestions={this.state.questions.length}
-                        percent={Math.floor(this.state.correctAnswers / this.state.questions.length * 100) }
+                        score={Math.floor(this.state.numCorrectAnswers / this.state.questions.length * 100) }
                         />
                     <Results
                         results={this.state.results}
@@ -112,11 +111,7 @@ class Quiz extends Component {
 
         if (isCorrectAnswer) {
             this.setState({
-                correctAnswers: this.state.correctAnswers + 1
-            });
-        } else {
-            this.setState({
-                incorrectAnswers: this.state.incorrectAnswers + 1
+                numCorrectAnswers: this.state.numCorrectAnswers + 1
             });
         }
     }

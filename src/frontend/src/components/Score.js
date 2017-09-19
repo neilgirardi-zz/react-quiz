@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 class Score extends Component {
 
     render() {
-        const correctAnswers = this.props.correctAnswers;
+        const numCorrectAnswers = this.props.numCorrectAnswers;
         const numQuestions = this.props.numQuestions;
-        const percent = this.props.percent;
+        const score = this.props.score;
 
         return (
             <div className="score">
-                <p>Score: {percent}% <span>( {correctAnswers} out of {numQuestions} )</span></p>
+                <p>Score: {score}% <span>( {numCorrectAnswers} out of {numQuestions} )</span></p>
             </div>
         )
     }
@@ -18,9 +18,9 @@ class Score extends Component {
 }
 
 Score.propTypes = {
-    correctAnswers: PropTypes.number,
+    numCorrectAnswers: PropTypes.number,
     numQuestions: PropTypes.number,
-    percent: PropTypes.number
+    score: PropTypes.number
 };
 
 export default Score;
