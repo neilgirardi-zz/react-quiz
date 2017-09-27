@@ -221,7 +221,11 @@ module.exports = exports = [
                 "answer": "Smalltalk"
             }
         ],
-        "correctAnswer": "D"
+        "correctAnswer": "D",
+        "funFact": "Smalltalk was one of the earliest object oriented programming " +
+        "languages. It pioneered several things that are now fairly common in " +
+        "modern programming languages including a virtual machine, closures, and " +
+        "duck typing."
     },
     {
         "ID": 8,

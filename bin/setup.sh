@@ -1,4 +1,4 @@
 #! /bin/bash
 npm install
-cd src/frontend
+cd frontend
 npm install

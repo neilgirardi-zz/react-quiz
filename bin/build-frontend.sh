@@ -1,3 +1,3 @@
 #! /bin/bash
-cd src/frontend
+cd frontend
 npm run build
