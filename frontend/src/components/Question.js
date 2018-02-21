@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class Question extends Component {
-
-    render() {
-        return (
-            <p className="question">{this.props.number}. {this.props.text}</p>
-        )
-    }
-
+function Question( props ) {
+    return (
+        <p className="question">{props.number}. {props.text}</p>
+    )
 }
 
 Question.propTypes = {

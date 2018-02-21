@@ -38,6 +38,7 @@ class Answer extends Component {
 }
 
 Answer.propTypes = {
+    onSelectAnswer: PropTypes.func,
     qID: PropTypes.string,
     onChange: PropTypes.func,
     checked: PropTypes.bool,

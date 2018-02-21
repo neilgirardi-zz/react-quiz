@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class Score extends Component {
+function Score( props ) {
 
-    render() {
-        const numCorrectAnswers = this.props.numCorrectAnswers;
-        const numQuestions = this.props.numQuestions;
-        const score = this.props.score;
+    const numCorrectAnswers = props.numCorrectAnswers;
+    const numQuestions = props.numQuestions;
+    const score = props.score;
 
-        return (
-            <div className="score">
-                <p>Score: {score}% <span>( {numCorrectAnswers} out of {numQuestions} )</span></p>
-            </div>
-        )
-    }
+    return (
+        <div className="score">
+            <p>Score: {score}% <span>( {numCorrectAnswers} out of {numQuestions} )</span></p>
+        </div>
+    )
 
 }
 
