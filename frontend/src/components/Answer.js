@@ -43,7 +43,8 @@ Answer.propTypes = {
     onChange: PropTypes.func,
     checked: PropTypes.bool,
     text: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    letter: PropTypes.string
 };
 
 export default Answer;

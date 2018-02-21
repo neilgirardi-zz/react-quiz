@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Header( props ) {
     const heading = props.mainHeading.split(' ');
-    const tagline = props.tagline;
+    const tagLine = props.tagLine;
     return (
         <header className="header text-center quiz-header">
             <div className="container">
@@ -12,8 +12,8 @@ function Header( props ) {
                         <span className="text-highlight">{heading[0]} </span>{heading[1]}
                     </h1>
                 </div>
-                <div className="tagline">
-                    <p>{tagline}</p>
+                <div className="tagLine">
+                    <p>{tagLine}</p>
                 </div>
             </div>
         </header>
@@ -21,8 +21,8 @@ function Header( props ) {
 }
 
 Header.propTypes = {
-    heading: PropTypes.string,
-    subHeading: PropTypes.string
+    mainHeading: PropTypes.string,
+    tagLine: PropTypes.string
 };
 
 export default Header;

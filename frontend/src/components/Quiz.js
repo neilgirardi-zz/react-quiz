@@ -122,7 +122,7 @@ class Quiz extends Component {
             <div className="quiz">
                 <Header
                     mainHeading="Hacker History"
-                    tagline="A quiz for your coffee break"
+                    tagLine="A quiz for your coffee break"
                 />
                 {this._content()}
             </div>

@@ -40,9 +40,9 @@ class MultipleChoice extends Component {
 }
 
 MultipleChoice.propTypes = {
-    choices: PropTypes.array
+    choices: PropTypes.array,
+    eventHandler: PropTypes.func
 };
-
 
 
 export default MultipleChoice;
