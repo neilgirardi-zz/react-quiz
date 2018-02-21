@@ -12,7 +12,7 @@ function Header( props ) {
                         <span className="text-highlight">{heading[0]} </span>{heading[1]}
                     </h1>
                 </div>
-                <div className="tagLine">
+                <div className="tagline">
                     <p>{tagLine}</p>
                 </div>
             </div>
